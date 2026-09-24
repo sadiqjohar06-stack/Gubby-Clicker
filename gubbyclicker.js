@@ -1,5 +1,5 @@
 let clicks = 0;
-let clickPower = 1;
+let clickPower = 2;
 let autoClickers = 0;
 
 let powerCost = 25;
