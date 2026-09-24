@@ -1,14 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gubby Clicker</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin-top: 35px;
+            font-size: 48px;
+            text-shadow: 0 0 15px #60a5fa;
+        }
+
+        #clicks {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        #gubbyButton {
+            width: 300px;
+            max-width: 70vw;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.08s;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+        }
+
+        #gubbyButton:hover {
+            transform: scale(1.05);
+        }
+
+        #gubbyButton:active {
+            transform: scale(0.90);
+        }
+
+        .shop {
+            margin: 30px auto;
+            width: min(500px, 90%);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .shop h2 {
+            margin-top: 0;
+        }
+
+        .upgrade {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .upgrade:hover {
+            background: #3b82f6;
+        }
+
+        .upgrade:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        #message {
+            min-height: 25px;
+            font-weight: bold;
+        }
+
+        .creator {
+            margin-top: 35px;
+            padding-bottom: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .floating {
+            position: fixed;
+            pointer-events: none;
+            font-size: 24px;
+            font-weight: bold;
+            animation: floatUp 0.8s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Gubby Clicker</h1>
-    
-    <img id="gubbyButton" src="gubby.png">
+    <h1>🐟 GUBBY CLICKER 🐟</h1>
+
+    <p id="clicks">Gubby Clicks: 0</p>
+
+    <img id="gubbyButton" src="gubby.png" alt="Gubby">
+
+    <div class="shop">
+
+        <h2>🛒 Gubby Shop</h2>
+
+        <button class="upgrade" id="powerUpgrade">
+            💪 Click Power +1 — Cost: 25
+        </button>
+
+        <button class="upgrade" id="autoUpgrade">
+            ⚡ Auto Clicker +1/sec — Cost: 100
+        </button>
+
+        <p id="power">Click Power: 1</p>
+        <p id="auto">Auto Clickers: 0</p>
+
+        <p id="message"></p>
+
+    </div>
+
+    <p class="creator">Made by Sadiq Johar</p>
+
     <script src="gubbyclicker.js"></script>
 
 </body>
