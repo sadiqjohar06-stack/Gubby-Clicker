@@ -1,5 +1,5 @@
 let clicks = 0;
-let clickPower = 0;
+let clickPower = 1;
 let autoClickers = 0;
 let firstClickAchievement = false;
 
