@@ -1,6 +1,7 @@
 let clicks = 0;
 let clickPower = 1;
 let autoClickers = 0;
+let firstClickAchievement = false;
 
 let powerCost = 25;
 let autoCost = 100;
@@ -39,7 +40,17 @@ function updateScreen() {
 
 gubby.onclick = function(event) {
 
+    clicks = clicks + clickPower;gubby.onclick = function(event) {
     clicks = clicks + clickPower;
+
+    if (clicks === 1 && firstClickAchievement === false) {
+        firstClickAchievement = true;
+        document.getElementById("achievement").textContent =
+            "🏆 Achievement unlocked! 💩 You just poopt your first Gubby!";
+    }
+
+    updateScreen();
+};
 
     createFloatingText(
         "+" + clickPower,
