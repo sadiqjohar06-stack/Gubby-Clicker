@@ -114,6 +114,24 @@
             to {
                 opacity: 0;
                 transform: translateY(-100px);
+                .achievement {
+    position: fixed;
+    top: 25px;
+    right: -400px;
+    background: #222;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    transition: right 0.5s ease;
+    z-index: 1000;
+}
+
+.achievement.show {
+    right: 25px;
+}
             }
         }
     </style>
@@ -125,7 +143,10 @@
     <h1></h1>
 
     <p id="clicks">Gubby Clicks: 0</p>
-    <p id="achievement"></p>
+    <div id="achievement" class="achievement">
+    🏆 Achievement unlocked!<br>
+    💩 You just poopt your first Gubby!
+</div>
 
     <img id="gubbyButton" src="gubby.png" alt="Gubby">
 
