@@ -43,11 +43,17 @@ gubby.onclick = function(event) {
     clicks = clicks + clickPower;gubby.onclick = function(event) {
     clicks = clicks + clickPower;
 
-    if (clicks === 1 && firstClickAchievement === false) {
-        firstClickAchievement = true;
-        document.getElementById("achievement").textContent =
-            "🏆 Achievement unlocked! 💩 You just poopt your first Gubby!";
-    }
+   if (clicks === 1 && firstClickAchievement === false) {
+    firstClickAchievement = true;
+
+    let achievement = document.getElementById("achievement");
+
+    achievement.classList.add("show");
+
+    setTimeout(function() {
+        achievement.classList.remove("show");
+    }, 4000);
+}
 
     updateScreen();
 };
